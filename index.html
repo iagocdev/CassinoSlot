@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roda da Fortuna</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="form-container" id="registrationForm">
+    <h1>Cadastro</h1>
+    <p>Insira seu nome completo e telefone para começar:</p>
+    <input type="text" id="name" placeholder="Nome completo" required>
+    <input type="tel" id="phone" placeholder="Telefone (Ex: 11912345678)" required>
+    <button onclick="validateAndStartGame()">Começar</button>
+  </div>
+
+  <div id="gameScreen" class="hidden">
+    <h1 id="welcomeMessage"></h1>
+
+    <div class="slot-machine">
+      <div class="reel" id="reel1">?</div>
+      <div class="reel" id="reel2">?</div>
+      <div class="reel" id="reel3">?</div>
+      <div class="reel" id="reel4">?</div>
+      <div class="reel" id="reel5">?</div>
+      <div class="reel" id="reel6">?</div>
+      <div class="reel" id="reel7">?</div>
+      <div class="reel" id="reel8">?</div>
+      <div class="reel" id="reel9">?</div>
+    </div>
+
+    <button id="spinButton" onclick="spinReels()">Girar</button>
+    <button onclick="openPixModal()">Recarregar Créditos</button>
+    <div class="credits" id="credits">Créditos: 10</div>
+    <div class="result" id="result">Boa sorte!</div>
+  </div>
+
+  <div class="pix-modal" id="pixModal">
+    <div class="pix-modal-content">
+      <h2>Recarregar Créditos</h2>
+      <p>Use este código Pix para simulação:</p>
+      <p><strong>1234.5678.9012.3456</strong></p>
+      <p>Selecione o valor desejado:</p>
+      <button onclick="addCredits(10)">Adicionar +10 Créditos</button>
+      <button onclick="addCredits(50)">Adicionar +50 Créditos</button>
+      <button onclick="addCredits(100)">Adicionar +100 Créditos</button>
+      <br><br>
+      <button onclick="closePixModal()">Fechar</button>
+    </div>
+  </div>
+
+  <canvas id="fireworksCanvas" class="fireworks"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
