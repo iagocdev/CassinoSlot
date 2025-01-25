@@ -85,39 +85,47 @@ function spinReels() {
 }*/
 
 function checkWin(reels) {
-    // As 9 posições dos reels são distribuídas em um grid 3x3
-    // Vamos reformatar os reels para um formato de matriz 3x3 para facilitar a verificação
-    const grid = [
-      [reels[0], reels[1], reels[2]],
-      [reels[3], reels[4], reels[5]],
-      [reels[6], reels[7], reels[8]]
-    ];
-  
-    // Verifica as linhas horizontais
-    for (let i = 0; i < 3; i++) {
-      if (grid[i][0] === grid[i][1] && grid[i][1] === grid[i][2]) {
-        return "Parabéns! Você Ganhou +50 Créditos!";
-      }
-    }
-  
-    // Verifica as colunas verticais
-    for (let i = 0; i < 3; i++) {
-      if (grid[0][i] === grid[1][i] && grid[1][i] === grid[2][i]) {
-        return "Parabéns! Você Ganhou +50 Créditos!";
-      }
-    }
-  
-    // Verifica as diagonais
-    if (grid[0][0] === grid[1][1] && grid[1][1] === grid[2][2]) {
+  // As 9 posições dos reels são distribuídas em um grid 3x3
+  // Vamos reformatar os reels para um formato de matriz 3x3 para facilitar a verificação
+  const grid = [
+    [reels[0], reels[1], reels[2]],
+    [reels[3], reels[4], reels[5]],
+    [reels[6], reels[7], reels[8]]
+  ];
+
+  // Verifica as linhas horizontais
+  for (let i = 0; i < 3; i++) {
+    if (grid[i][0] === grid[i][1] && grid[i][1] === grid[i][2]) {
+      credits += 50; // Adiciona 50 créditos ao saldo
+      document.getElementById("credits").innerText = `Créditos: ${credits}`;
       return "Parabéns! Você Ganhou +50 Créditos!";
     }
-    if (grid[0][2] === grid[1][1] && grid[1][1] === grid[2][0]) {
-      return "Parabéns! Você Ganhou +50 Créditos!";
-    }
-  
-    // Se não houver vitória
-    return "Boa sorte na próxima rodada!";
   }
+
+  // Verifica as colunas verticais
+  for (let i = 0; i < 3; i++) {
+    if (grid[0][i] === grid[1][i] && grid[1][i] === grid[2][i]) {
+      credits += 50; // Adiciona 50 créditos ao saldo
+      document.getElementById("credits").innerText = `Créditos: ${credits}`;
+      return "Parabéns! Você Ganhou +50 Créditos!";
+    }
+  }
+
+  // Verifica as diagonais
+  if (grid[0][0] === grid[1][1] && grid[1][1] === grid[2][2]) {
+    credits += 50; // Adiciona 50 créditos ao saldo
+    document.getElementById("credits").innerText = `Créditos: ${credits}`;
+    return "Parabéns! Você Ganhou +50 Créditos!";
+  }
+  if (grid[0][2] === grid[1][1] && grid[1][1] === grid[2][0]) {
+    credits += 50; // Adiciona 50 créditos ao saldo
+    document.getElementById("credits").innerText = `Créditos: ${credits}`;
+    return "Parabéns! Você Ganhou +50 Créditos!";
+  }
+
+  // Se não houver vitória
+  return "Boa sorte na próxima rodada!";
+}
   
 
 function triggerFireworks() {
