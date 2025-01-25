@@ -1,9 +1,5 @@
-# CassinoSlot
-Aqui está uma documentação detalhada do seu projeto, que pode ser usada para explicar como o código funciona e o que cada parte faz. A documentação inclui uma visão geral do projeto, uma descrição de cada arquivo e uma explicação de funções chave.
 
----
-
-# **Documentação do Projeto: Jogo da Roda da Fortuna**
+#  Jogo da Roda da Fortuna
 
 ## **Visão Geral**
 
